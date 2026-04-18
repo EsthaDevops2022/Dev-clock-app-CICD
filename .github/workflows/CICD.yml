@@ -84,15 +84,15 @@ jobs:
             # Clean up old images
             docker image prune -f
 
-      #- name: Verify deployment
-       # uses: appleboy/ssh-action@v1.0.3
-        #with:
-         # host: ${{ env.EC2_HOST }}
-          #username: ${{ env.EC2_USER }}
-          #key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
-          #script: |
+      - name: Verify deployment
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ env.EC2_HOST }}
+          username: ${{ env.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          script: |
             # Check if container is running
-           # docker ps --filter "name=${{ env.CONTAINER_NAME }}" --format "table {{.Names}}\t{{.Status}}"
+            docker ps --filter "name=${{ env.CONTAINER_NAME }}" --format "table {{.Names}}\t{{.Status}}"
             
             # Check container logs
-            #docker logs --tail 50 ${{ env.CONTAINER_NAME }}
+            docker logs --tail 50 ${{ env.CONTAINER_NAME }}
