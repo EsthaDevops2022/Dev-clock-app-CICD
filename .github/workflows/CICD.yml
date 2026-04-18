@@ -95,4 +95,8 @@ jobs:
             docker ps --filter "name=${{ env.CONTAINER_NAME }}" --format "table {{.Names}}\t{{.Status}}"
             
             # Check container logs
+<<<<<<< HEAD
             docker logs --tail 50 ${{ env.CONTAINER_NAME }}
+=======
+            docker logs --tail 50 ${{ env.CONTAINER_NAME }}
+>>>>>>> c73d9a8affe2f4fd117c46a6b28cc8c582b2860c
