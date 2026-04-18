@@ -14,7 +14,7 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: clock-app
-  EC2_HOST: 3.216.90.172
+  EC2_HOST: 35.171.228.8
   EC2_USER: ec2_user
   CONTAINER_NAME: clock-app
   IMAGE_TAG: ${{ github.sha }}
@@ -96,5 +96,3 @@ jobs:
             
             # Check container logs
             #docker logs --tail 50 ${{ env.CONTAINER_NAME }}
-
-
