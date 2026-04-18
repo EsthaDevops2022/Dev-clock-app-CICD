@@ -48,8 +48,8 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           # Build the Docker image
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG ./dev-clock-app-20260412-github-actions-class-project
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest ./dev-clock-app-20260412-github-actions-class-project
           
           # Push to ECR
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
